@@ -1,0 +1,10 @@
+# Ignore Visual Studio temporary files and folders
+.vs/
+*.user
+*.suo
+*.vcxproj.user
+*.ipch
+*.obj
+*.exe
+*.log
+*.db
