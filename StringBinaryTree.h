@@ -6,7 +6,7 @@
 using namespace std;
 
 // The IntBinaryTree class manages a binary tree of integers.
-class IntBinaryTree {
+class StringBinaryTree {
 private:
    // TreeNode is a private structure for IntBinaryTree nodes.
    struct TreeNode {
