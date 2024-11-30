@@ -18,13 +18,8 @@ void StringBinaryTree::insert(TreeNode *&nodePtr, TreeNode *&newNode) {
 // insertNode creates a new node to hold num as its value,
 // and passes it to the insert function.                  
 void StringBinaryTree::insertNode(int num) {
-   TreeNode *newNode;      // Pointer to a new node.
+    TreeNode* newNode = new TreeNode(str); // creates new node
 
-   // Create a new node and store num in it.
-   newNode = new TreeNode;
-   newNode->value = num;
-   newNode->left = newNode->right = nullptr;
-   
    // Insert the node.
    insert(root, newNode);
 }
@@ -33,9 +28,7 @@ void StringBinaryTree::insertNode(int num) {
 // deletes all nodes in the tree.                
 void StringBinaryTree::destroySubTree(TreeNode *nodePtr) {
    if (nodePtr) {
-      if (nodePtr->left)
          destroySubTree(nodePtr->left);
-      if (nodePtr->right)
          destroySubTree(nodePtr->right);
       delete nodePtr;
    }
@@ -45,13 +38,13 @@ void StringBinaryTree::destroySubTree(TreeNode *nodePtr) {
 // searchNode determines if a value is present in  
 // the tree. If so, the function returns true.     
 // Otherwise, it returns false.                    
-bool StringBinaryTree::searchNode(int num) {
+bool StringBinaryTree::searchNode(const string &str) {
    TreeNode *nodePtr = root;
 
    while (nodePtr)    {
-      if (nodePtr->value == num)
+      if (str == nodePtr->value)
          return true;
-      else if (num < nodePtr->value)
+      else if (str < nodePtr->value)
          nodePtr = nodePtr->left;
       else
          nodePtr = nodePtr->right;
