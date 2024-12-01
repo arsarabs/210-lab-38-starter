@@ -32,10 +32,10 @@ private:
 
 public:
    // Constructor initializes the root to nullptr, indicating an empty tree.
-   IntBinaryTree()     { root = nullptr; }
+    StringBinaryTree()     { root = nullptr; }
 
    // Destructor deallocates all nodes in the tree.
-   ~IntBinaryTree()    { destroySubTree(root); }
+   ~StringBinaryTree()    { destroySubTree(root); }
 
    // Public interface for inserting, searching, and removing nodes.
    void insertNode(const string &);

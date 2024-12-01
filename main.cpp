@@ -36,9 +36,9 @@ int main() {
     infile.close();
     cout << "Successfully loaded codes from \"" << FILENAME << "\" into the BST.\n";
 
-    while (!exitProgram) {
+    while (!exit) {
         //display
-        display();
+        displayMenu();
         //promot userChoice
         choice = userChoice();
 
@@ -73,11 +73,11 @@ int main() {
         case 4: {
             string previousCode = userString("Enter the code to modify: ");
             string updatedCode = userString("Enter the new to modify: ");
-            if (bst.modifyNode(oldCode, newCode)) {
-                cout << "Code \"" << oldCode << "\" has been modified to \"" << newCode << endl;
+            if (bst.modifyNode(previousCode, updatedCode)) {
+                cout << "Code \"" << previousCode << "\" has been modified to \"" << updatedCode << endl;
             }
             else {
-                cout << "Error: Code \"" << oldCode << "\" not found in the BST. Modification failed." << endl;
+                cout << "Error: Code \"" << previousCode << "\" not found in the BST. Modification failed." << endl;
             }
             break;
         }
