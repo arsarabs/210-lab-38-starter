@@ -55,14 +55,19 @@ int main() {
             if (bst.searchNode(delCode)) {
                 bst.removeNode(delCode);
                 cout << "Code \"" << delCode << "\" deleted from the BST." << endl;
-            }
-            else {
+            } else {
                 cout << "Error: Code \"" << delCode << "\" not found in the BST." << endl;
             }
             break;
         }
         case 3: {
             string searchCode;
+            if (bst.searchNode(searchCode)) {
+                cout << "Code \"" << searchCode << "\" found in the BST." << endl;
+            }
+            else {
+                cout << "Code \"" << searchCode << "\" not found in the BST." << endl;
+            }
             break;
         }
         case 4: {
