@@ -84,30 +84,25 @@ void StringBinaryTree::makeDeletion(TreeNode *&nodePtr) {
    // the left subtree.
    TreeNode *tempNodePtr;
 
-   if (!nodePtr)
-      cout << "Cannot delete empty node.\n";
-   else if (!nodePtr->right) {
+
+   // Case 1 - No child (Leaf Node)
+   if (nodePtr->left == nullptr && nodePtr->right == nullptr) {
+       delete nodePtr;
+       nodePtr = nullptr;
+   }
+   else if (nodePtr->left == nullptr) {
       tempNodePtr = nodePtr;
-      nodePtr = nodePtr->left;   // Reattach the left child
+      nodePtr = nodePtr->right;   // Reattach the left child
       delete tempNodePtr;
-   } else if (!nodePtr->left) {
+   } else if (nodePtr->right == nullptr) {
       tempNodePtr = nodePtr;
-      nodePtr = nodePtr->right;  // Reattach the right child
+      nodePtr = nodePtr->left;  // Reattach the right child
       delete tempNodePtr;
    }
    // If the node has two children.
    else {
-      // Move one node the right.
-      tempNodePtr = nodePtr->right;
-      // Go to the end left node.
-      while (tempNodePtr->left)
-         tempNodePtr = tempNodePtr->left;
-      // Reattach the left subtree.
-      tempNodePtr->left = nodePtr->left;
-      tempNodePtr = nodePtr;
-      // Reattach the right subtree.
-      nodePtr = nodePtr->right;
-      delete tempNodePtr;
+       TreeNode* current = nodePtr->right; //  in-order successor
+    
    }
 }
 
