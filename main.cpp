@@ -43,9 +43,12 @@ int main() {
         choice = userChoice();
 
         switch (choice) {
-            //case1 - add code
+            
         case 1: {
             string newCode;
+            string newCode = getValidatedString("Enter the code to add: ");
+            bst.insertNode(newCode);
+            cout << "Code \"" << newCode << "\" added to the BST." << endl;
             break;
         }
         case 2: {
@@ -63,14 +66,17 @@ int main() {
         }
         case 5: {
             cout << "IN ORDER TRANSVERSAL" << endl;
+            bst.displayInOrder();
             break;
         }
         case 6: {
             cout << "PRE ORDER TRANSVERSAL" << endl;
+            bst.displayPreOrder();
             break;
         }
         case 7: {
             cout << "POST ORDER TRANSVERSAL" << endl;
+            bst.displayPostOrder();
             break;
         }
         case 8: {
@@ -82,13 +88,7 @@ int main() {
             cout << "Please select a valid option from the menu.\n";
             break;
         }
-            //case2 - delete code
-            //case3 - search for code
-            //case4 - modify
-            //case5 - display tree in order
-            //case6 - display tree pre order
-            //case7 - display tree post order
-            //case8 - exit
+ 
         }
 
     }
