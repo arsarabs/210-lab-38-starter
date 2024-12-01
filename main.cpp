@@ -71,8 +71,14 @@ int main() {
             break;
         }
         case 4: {
-            string previousCode = userString()
-            string updatedCode = userString()
+            string previousCode = userString("Enter the code to modify: ");
+            string updatedCode = userString("Enter the new to modify: ");
+            if (bst.modifyNode(oldCode, newCode)) {
+                cout << "Code \"" << oldCode << "\" has been modified to \"" << newCode << endl;
+            }
+            else {
+                cout << "Error: Code \"" << oldCode << "\" not found in the BST. Modification failed." << endl;
+            }
             break;
         }
         case 5: {
