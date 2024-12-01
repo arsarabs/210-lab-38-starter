@@ -17,7 +17,7 @@ int main() {
     StringBinaryTree bst;
     string code;
     bool exit = false;
-    int userChoice;
+    int choice;
     ifstream infile(FILENAME);
 
     // Check if the file was opened successfully.
@@ -38,16 +38,21 @@ int main() {
 
     while (!exitProgram) {
         //display
+        display();
         //promot userChoice
+        choice = userChoice();
 
-         //case1
-         //case2
-         //case3
-         //case4
-         //case5
-         //case6
-         //case7
-         //case8
+        switch (choice) {
+            //case1 - add code
+            //case2 - delete code
+            //case3 - search for code
+            //case4 - modify
+            //case5 - display tree in order
+            //case6 - display tree pre order
+            //case7 - display tree post order
+            //case8 - exit
+        }
+
     }
 
     return 0;
