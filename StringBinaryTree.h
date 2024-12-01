@@ -2,6 +2,9 @@
 #ifndef INTBINARYTREE_H
 #define INTBINARYTREE_H
 
+#include <iostream>
+#include <fstream>
+#include <limits>
 #include <string>
 using namespace std;
 

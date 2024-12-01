@@ -1,7 +1,6 @@
 // Implementation file for the IntBinaryTree class
-#include <iostream>
+
 #include "StringBinaryTree.h"
-using namespace std;
 
 // insert accepts a TreeNode pointer and a pointer to a node.
 // The function inserts the node into the tree pointed to by 
@@ -17,7 +16,7 @@ void StringBinaryTree::insert(TreeNode *&nodePtr, TreeNode *&newNode) {
 
 // insertNode creates a new node to hold num as its value,
 // and passes it to the insert function.                  
-void StringBinaryTree::insertNode(int num) {
+void StringBinaryTree::insertNode(const string& str) {
     TreeNode* newNode = new TreeNode(str); // creates new node
 
    // Insert the node.
@@ -38,7 +37,7 @@ void StringBinaryTree::destroySubTree(TreeNode *nodePtr) {
 // searchNode determines if a value is present in  
 // the tree. If so, the function returns true.     
 // Otherwise, it returns false.                    
-bool StringBinaryTree::searchNode(const string &str) {
+bool StringBinaryTree::searchNode(const string &str) const{
    TreeNode *nodePtr = root;
 
    while (nodePtr)    {
@@ -69,7 +68,7 @@ void StringBinaryTree::deleteNode(const string& str, TreeNode *&nodePtr) {
 
    if (str < nodePtr->value)
       deleteNode(str, nodePtr->left);
-   else if (num > nodePtr->value)
+   else if (str > nodePtr->value)
       deleteNode(str, nodePtr->right);
    else
       makeDeletion(nodePtr);
@@ -146,9 +145,9 @@ void StringBinaryTree::displayPostOrder(TreeNode *nodePtr) const {
    }
 }
 
-bool StringBinaryTree::modifyNode(const string& oldStr, const string& newStr) {
+bool StringBinaryTree::modify(const string& oldStr, const string& newStr) {
     if (searchNode(oldStr)) {
-        removeNode(oldStr);
+        remove(oldStr);
         insertNode(newStr);
         return true;
     }

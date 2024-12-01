@@ -1,7 +1,5 @@
 
-#include <iostream>
-#include <fstream>
-#include <limits>
+
 #include "StringBinaryTree.h"
 
 const string FILENAME = "codes.txt";
