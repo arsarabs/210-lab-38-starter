@@ -45,14 +45,20 @@ int main() {
         switch (choice) {
             
         case 1: {
-            string newCode;
             string newCode = getValidatedString("Enter the code to add: ");
             bst.insertNode(newCode);
             cout << "Code \"" << newCode << "\" added to the BST." << endl;
             break;
         }
         case 2: {
-            string deleteCode;
+            string delCode = getValidatedString("Enter the code to delete: ");
+            if (bst.searchNode(delCode)) {
+                bst.removeNode(delCode);
+                cout << "Code \"" << delCode << "\" deleted from the BST." << endl;
+            }
+            else {
+                cout << "Error: Code \"" << delCode << "\" not found in the BST." << endl;
+            }
             break;
         }
         case 3: {
