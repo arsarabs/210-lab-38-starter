@@ -1,6 +1,7 @@
 
 #include <iostream>
 #include <fstream>
+include <limits>
 #include "StringBinaryTree.h"
 
 const string FILENAME = "codes.txt";
@@ -53,7 +54,7 @@ int main() {
         case 2: {
             string delCode = userString("Enter the code to delete: ");
             if (bst.searchNode(delCode)) {
-                bst.removeNode(delCode);
+                bst.remove(delCode);
                 cout << "Code \"" << delCode << "\" deleted from the BST." << endl;
             } else {
                 cout << "Error: Code \"" << delCode << "\" not found in the BST." << endl;
@@ -73,7 +74,7 @@ int main() {
         case 4: {
             string previousCode = userString("Enter the code to modify: ");
             string updatedCode = userString("Enter the new to modify: ");
-            if (bst.modifyNode(previousCode, updatedCode)) {
+            if (bst.modify(previousCode, updatedCode)) {
                 cout << "Code \"" << previousCode << "\" has been modified to \"" << updatedCode << endl;
             }
             else {
