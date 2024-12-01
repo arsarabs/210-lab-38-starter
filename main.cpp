@@ -61,7 +61,7 @@ int main() {
             break;
         }
         case 3: {
-            string searchCode;
+            string searchCode = userString("Enter the code to search for: ");
             if (bst.searchNode(searchCode)) {
                 cout << "Code \"" << searchCode << "\" found in the BST." << endl;
             }
@@ -71,8 +71,8 @@ int main() {
             break;
         }
         case 4: {
-            string previousCode;
-            string updatedCode;
+            string previousCode = userString()
+            string updatedCode = userString()
             break;
         }
         case 5: {
