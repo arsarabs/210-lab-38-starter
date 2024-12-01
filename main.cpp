@@ -14,6 +14,17 @@ string userString(const string &prompt);
 
 int main() {
     //starting here 
+    StringBinaryTree bst;
+    string code;
+    bool exit = false;
+    int userChoice;
+    ifstream infile(FILENAME);
+
+    // Check if the file was opened successfully.
+    if (!infile) {
+        cout << "Error: Unable to open file \"" << FILENAME << "\" for reading." << endl;
+        return 1;
+    }
 
     return 0;
 }
@@ -43,5 +54,13 @@ int userChoice() {
 }
 string userString(const string& prompt) {
     string input;
-    whi
+    while (true) {
+        cout << prompt;
+        getline(cin, input);
+        if (!input.empty()) {
+            break; // Valid input.
+        }
+        cout << "Input cannot be empty. Please try again.\n";
+    }
+    return input;
 }
