@@ -101,7 +101,13 @@ void StringBinaryTree::makeDeletion(TreeNode *&nodePtr) {
    }
    // If the node has two children.
    else {
-       TreeNode* current = nodePtr->right; //  in-order successor
+      // find the in - order successor(smallest value in the right subtree).
+       TreeNode* current = nodePtr->right; 
+
+
+       //replace node's value with in-order successor's value
+
+       // and then delete the in-order successor
     
    }
 }
