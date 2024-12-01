@@ -103,11 +103,15 @@ void StringBinaryTree::makeDeletion(TreeNode *&nodePtr) {
    else {
       // find the in - order successor(smallest value in the right subtree).
        TreeNode* current = nodePtr->right; 
-
+       while (current->left != nullptr) {
+           current = current->left;
+       }
 
        //replace node's value with in-order successor's value
+       nodePtr->value = current->value;
 
        // and then delete the in-order successor
+       deleteNode(current->value, nodePtr->right);
     
    }
 }
