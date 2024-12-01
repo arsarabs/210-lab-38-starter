@@ -54,17 +54,23 @@ bool StringBinaryTree::searchNode(const string &str) {
 
 // remove calls deleteNode to delete the      
 // node whose value member is the same as num.
-void StringBinaryTree::remove(int num) {
-   deleteNode(num, root);
+void StringBinaryTree::remove(const string& str) {
+   deleteNode(str, root);
 }
 
 // deleteNode deletes the node whose value 
 // member is the same as num.              
-void StringBinaryTree::deleteNode(int num, TreeNode *&nodePtr) {
-   if (num < nodePtr->value)
-      deleteNode(num, nodePtr->left);
+void StringBinaryTree::deleteNode(const string& str, TreeNode *&nodePtr) {
+
+    if (!nodePtr) {
+        cout << "Error: \"" << str << "\" not found in the BST.\n";
+        return; // Value not found; nothing to delete.
+    }
+
+   if (str < nodePtr->value)
+      deleteNode(str, nodePtr->left);
    else if (num > nodePtr->value)
-      deleteNode(num, nodePtr->right);
+      deleteNode(str, nodePtr->right);
    else
       makeDeletion(nodePtr);
 }
@@ -133,4 +139,13 @@ void StringBinaryTree::displayPostOrder(TreeNode *nodePtr) const {
       displayPostOrder(nodePtr->right);
       cout << nodePtr->value << endl;
    }
+}
+
+bool StringBinaryTree::modifyNode(const string& oldStr, const string& newStr) {
+    if (searchNode(oldStr)) {
+        removeNode(oldStr);
+        insertNode(newStr);
+        return true;
+    }
+    return false; // oldStr not found; modification failed.
 }
