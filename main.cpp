@@ -44,6 +44,44 @@ int main() {
 
         switch (choice) {
             //case1 - add code
+        case 1: {
+            string newCode;
+            break;
+        }
+        case 2: {
+            string deleteCode;
+            break;
+        }
+        case 3: {
+            string searchCode;
+            break;
+        }
+        case 4: {
+            string previousCode;
+            string updatedCode;
+            break;
+        }
+        case 5: {
+            cout << "IN ORDER TRANSVERSAL" << endl;
+            break;
+        }
+        case 6: {
+            cout << "PRE ORDER TRANSVERSAL" << endl;
+            break;
+        }
+        case 7: {
+            cout << "POST ORDER TRANSVERSAL" << endl;
+            break;
+        }
+        case 8: {
+            exit = true;
+            cout << "Exiting the program. Goodbye!" << endl;
+            break;
+        }
+        default: {
+            cout << "Please select a valid option from the menu.\n";
+            break;
+        }
             //case2 - delete code
             //case3 - search for code
             //case4 - modify
