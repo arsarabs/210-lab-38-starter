@@ -26,6 +26,30 @@ int main() {
         return 1;
     }
 
+    // Read codes from the file and insert into the BST.
+    while (getline(infile, code)) {
+        if (!code.empty()) { // Avoid inserting empty lines.
+            bst.insertNode(code);
+        }
+    }
+
+    infile.close();
+    cout << "Successfully loaded codes from \"" << FILENAME << "\" into the BST.\n";
+
+    while (!exitProgram) {
+        //display
+        //promot userChoice
+
+         //case1
+         //case2
+         //case3
+         //case4
+         //case5
+         //case6
+         //case7
+         //case8
+    }
+
     return 0;
 }
 
